@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="ms">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Laman latihan ringkas untuk memahami asas GitHub.">
+  <title>Makmal GitHub Pertama Saya</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #172033; --muted: #64748b; --line: #e5eaf1; --paper: #fff;
+      --wash: #f4f7fb; --accent: #2457d6; --accent-soft: #eaf0ff;
+      --green: #147d54; --orange: #78420d; --orange-soft: #fff3e4;
+      --shadow: 0 16px 45px rgba(20, 34, 60, .08);
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--wash); color: var(--ink); font: 16px/1.55 Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+    .wrap { width: min(1080px, calc(100% - 32px)); margin: 0 auto; }
+    header { padding: 42px 0 30px; }
+    .eyebrow { color: var(--accent); font-weight: 750; letter-spacing: .12em; text-transform: uppercase; font-size: .75rem; }
+    h1 { font-size: clamp(2rem, 5vw, 3.5rem); line-height: 1.05; margin: 10px 0 14px; letter-spacing: -.045em; }
+    .intro { color: var(--muted); max-width: 700px; font-size: 1.08rem; margin: 0; }
+    .hero { display: grid; grid-template-columns: 1.35fr .85fr; gap: 20px; align-items: stretch; margin-bottom: 24px; }
+    .panel { background: var(--paper); border: 1px solid var(--line); border-radius: 20px; box-shadow: var(--shadow); }
+    .hero-main { padding: 26px; }
+    .hero-side { padding: 24px; background: #172033; color: white; }
+    .hero-side p { color: #cbd5e1; margin-bottom: 0; }
+    .hero-side .big { font-size: clamp(1.7rem, 4vw, 2.4rem); font-weight: 800; letter-spacing: -.05em; line-height: 1.15; margin-top: 10px; }
+    .tag { display: inline-flex; padding: 5px 10px; border-radius: 999px; background: var(--accent-soft); color: var(--accent); font-size: .78rem; font-weight: 750; }
+    h2 { font-size: 1.3rem; margin: 0 0 12px; letter-spacing: -.02em; }
+    h3 { font-size: 1rem; margin: 0 0 6px; }
+    .muted { color: var(--muted); }
+    .section { margin: 28px 0; }
+    .section-head { display: flex; justify-content: space-between; align-items: end; gap: 16px; margin-bottom: 14px; }
+    .section-head p { margin: 0; color: var(--muted); font-size: .92rem; }
+    .progress-track { height: 10px; background: #e8edf5; border-radius: 999px; overflow: hidden; margin: 10px 0 6px; }
+    .progress-fill { height: 100%; width: 0%; background: var(--accent); border-radius: inherit; transition: width .2s ease; }
+    .steps { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+    .step { display: flex; gap: 12px; align-items: flex-start; padding: 17px; background: white; border: 1px solid var(--line); border-radius: 15px; }
+    .step input { width: 19px; height: 19px; margin: 3px 0 0; accent-color: var(--green); flex: 0 0 auto; }
+    .step p { margin: 0; color: var(--muted); font-size: .9rem; }
+    .step.done { border-color: #b6e4cb; background: #fbfffc; }
+    .step.done h3 { color: var(--green); }
+    .grid-terms { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+    .term { padding: 18px; border-radius: 15px; background: white; border: 1px solid var(--line); }
+    .term code { display: inline-block; background: var(--accent-soft); color: var(--accent); padding: 3px 7px; border-radius: 7px; font-weight: 750; font-size: .85rem; margin-bottom: 9px; }
+    .term p { margin: 0; font-size: .9rem; color: var(--muted); }
+    .flow { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; padding: 18px; background: white; border: 1px solid var(--line); border-radius: 15px; }
+    .flow span { background: var(--accent-soft); color: var(--accent); padding: 8px 11px; border-radius: 9px; font-weight: 700; font-size: .88rem; }
+    .flow b { color: #94a3b8; }
+    .callout { padding: 16px 18px; border-radius: 14px; background: var(--orange-soft); color: var(--orange); border: 1px solid #f5d8b4; }
+    .callout strong { display: block; margin-bottom: 3px; }
+    footer { padding: 24px 0 42px; color: var(--muted); font-size: .85rem; }
+    @media (max-width: 720px) { .hero { grid-template-columns: 1fr; } .steps, .grid-terms { grid-template-columns: 1fr; } .section-head { align-items: flex-start; flex-direction: column; } header { padding-top: 30px; } }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="eyebrow">Projek latihan · Versi 1.0</div>
+      <h1>Makmal GitHub Pertama Saya</h1>
+      <p class="intro">Laman latihan ringkas untuk faham bagaimana GitHub menyimpan fail projek, merekod perubahan dan membantu orang bekerjasama.</p>
+    </header>
+    <main>
+      <section class="hero">
+        <div class="panel hero-main">
+          <span class="tag">Projek pertama kau</span>
+          <h2 style="margin-top:14px">Bayangkan GitHub sebagai rumah projek yang ada buku sejarah.</h2>
+          <p class="muted">Fail projek disimpan dalam <strong>repository</strong>. Setiap <strong>commit</strong> merekod perubahan. <strong>Branch</strong> beri ruang selamat untuk mencuba. <strong>Pull request</strong> pula membolehkan perubahan disemak sebelum digabungkan ke versi utama.</p>
+        </div>
+        <div class="panel hero-side">
+          <div class="eyebrow" style="color:#9eb7ff">Gambaran besar</div>
+          <div class="big">Rancang → Bina → Semak</div>
+          <p>GitHub bukan sekadar tempat simpan coding. Ia juga membantu kita mengurus kerja sesebuah projek.</p>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-head">
+          <div><h2>Checklist latihan GitHub</h2><p>Tandakan setiap langkah selepas kau berjaya buat di GitHub.</p></div>
+          <div style="min-width:170px; width:min(240px,100%)"><strong id="progress-label">0 daripada 7 selesai</strong><div class="progress-track"><div class="progress-fill" id="progress-fill"></div></div></div>
+        </div>
+        <div class="steps" id="steps">
+          <label class="step"><input type="checkbox"><span><h3>1. Cipta repository</h3><p>Sediakan rumah untuk projek ini di GitHub.</p></span></label>
+          <label class="step"><input type="checkbox"><span><h3>2. Upload fail projek</h3><p>Masukkan index.html dan README.md.</p></span></label>
+          <label class="step"><input type="checkbox"><span><h3>3. Buat commit</h3><p>Simpan rekod perubahan dengan mesej ringkas.</p></span></label>
+          <label class="step"><input type="checkbox"><span><h3>4. Buka Issue</h3><p>Catat satu tugasan atau idea penambahbaikan.</p></span></label>
+          <label class="step"><input type="checkbox"><span><h3>5. Cipta branch</h3><p>Cuba perubahan tanpa mengusik versi utama.</p></span></label>
+          <label class="step"><input type="checkbox"><span><h3>6. Buka pull request</h3><p>Cadangkan perubahan untuk disemak, kemudian merge.</p></span></label>
+          <label class="step"><input type="checkbox"><span><h3>7. Publish dengan GitHub Pages</h3><p>Jadikan laman web contoh ini boleh dibuka online.</p></span></label>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>Enam istilah GitHub yang penting</h2>
+        <div class="grid-terms">
+          <article class="term"><code>Repository</code><h3>Folder projek</h3><p>Tempat menyimpan fail berkaitan projek serta sejarah perubahannya.</p></article>
+          <article class="term"><code>Commit</code><h3>Snapshot yang disimpan</h3><p>Rekod perubahan yang disimpan bersama mesej ringkas.</p></article>
+          <article class="term"><code>Branch</code><h3>Ruang kerja berasingan</h3><p>Tempat mencuba atau membina perubahan tanpa mengganggu versi utama.</p></article>
+          <article class="term"><code>Pull request</code><h3>Cadangan perubahan</h3><p>Tempat membincangkan dan menyemak perubahan sebelum merge.</p></article>
+          <article class="term"><code>Issue</code><h3>Tugasan atau masalah</h3><p>Untuk merekod bug, idea, soalan atau penambahbaikan.</p></article>
+          <article class="term"><code>GitHub Pages</code><h3>Terbitkan website</h3><p>Servis untuk menerbitkan laman web statik daripada repository.</p></article>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>Aliran kerja biasa di GitHub</h2>
+        <div class="flow" aria-label="Aliran kerja GitHub"><span>Issue</span><b>→</b><span>Branch</span><b>→</b><span>Edit fail</span><b>→</b><span>Commit</span><b>→</b><span>Pull request</span><b>→</b><span>Semak</span><b>→</b><span>Merge</span></div>
+      </section>
+
+      <div class="callout"><strong>Peringatan keselamatan</strong>Ini projek latihan sahaja. Jangan upload nama pelanggan, nombor telefon, nombor pendaftaran atau butiran kenderaan pelanggan, kata laluan, API key atau dokumen sulit syarikat. Website yang diterbitkan melalui GitHub Pages boleh diakses secara umum di internet.</div>
+    </main>
+    <footer>Makmal GitHub Pertama Saya · Progress checklist disimpan dalam browser pada peranti ini sahaja.</footer>
+  </div>
+  <script>
+    const checkboxes = [...document.querySelectorAll('#steps input[type="checkbox"]')];
+    const progressLabel = document.getElementById('progress-label');
+    const progressFill = document.getElementById('progress-fill');
+    const storageKey = 'github-starter-lab-progress-v1';
+    function updateProgress() {
+      const done = checkboxes.filter(box => box.checked).length;
+      progressLabel.textContent = `${done} daripada ${checkboxes.length} selesai`;
+      progressFill.style.width = `${(done / checkboxes.length) * 100}%`;
+      checkboxes.forEach(box => box.closest('.step').classList.toggle('done', box.checked));
+      try { localStorage.setItem(storageKey, JSON.stringify(checkboxes.map(box => box.checked))); }
+      catch (error) { /* Checklist masih berfungsi jika browser tidak benarkan simpanan. */ }
+    }
+    try {
+      const saved = JSON.parse(localStorage.getItem(storageKey) || '[]');
+      checkboxes.forEach((box, index) => { box.checked = Boolean(saved[index]); });
+    } catch (error) { /* Mulakan checklist kosong jika data lama tidak dapat dibaca. */ }
+    checkboxes.forEach(box => box.addEventListener('change', updateProgress));
+    updateProgress();
+  </script>
+</body>
+</html>
