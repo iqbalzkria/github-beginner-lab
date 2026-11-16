@@ -48,11 +48,6 @@ Website yang diterbitkan adalah public. Jangan letakkan maklumat sulit dalam pro
 | Pull request | Cadangan untuk semak dan gabungkan perubahan |
 | Merge | Gabungkan perubahan ke branch lain |
 | GitHub Pages | Terbitkan website statik daripada repository |
-## Nota Latihan Revert
-
-Ini ialah perubahan sementara untuk belajar fungsi GitHub Revert.
-
-Nota ini akan dipadamkan melalui latihan Revert selepas ini.
 
 ## Nota keselamatan penting
 
